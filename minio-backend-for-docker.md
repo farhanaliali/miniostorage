@@ -16,10 +16,10 @@ filename config.yml
     version: 0.1
     storage:
       s3:
-        accesskey: ejMB93OlyPQsxXzGOyka
-        secretkey: lDRE5estwK30cSJPUWfVMeup7EJ4SFW0tpo2o5Lb
+        accesskey: ejMB93OlyPQsxXsdedzGOyka
+        secretkey: lDRE5estwK30cSJPUWfVsdfsMeup7EJ4SFW0tpo2o5Lb
         region: us-east-1
-        regionendpoint: https://minio.rockvillegroup.com:9000
+        regionendpoint: https://minio.domain.com.com:9000
         bucket: docker-registry
         encrypt: false
     http:
@@ -73,9 +73,9 @@ You have set up the /etc/nginx/sites-available/your_domain
     server {
             listen 443 ssl;
             listen [::]:443 ssl;
-            server_name registry.rockvillegroup.com;
-              ssl_certificate "/etc/nginx/ssl/rockvillegroup/rockvillegroup.crt";
-              ssl_certificate_key "/etc/nginx/ssl/rockvillegroup/rockvillegroup.key";
+            server_name registry.domain.com;
+              ssl_certificate "/etc/nginx/ssl/registry.domain.com/registry.domain.com.crt";
+              ssl_certificate_key "/etc/nginx/ssl/registry.domain.com/registry.domain.com.key";
 
          location / {
             # Do not allow connections from docker 1.5 and earlier
@@ -96,7 +96,7 @@ You have set up the /etc/nginx/sites-available/your_domain
 
 Now create symbolic link in sites-enabled
 
-    sudo ln -s /etc/nginx/sites-available/registry.rockvillegroup.com /etc/nginx/sites-enabled/registry.rockvillegroup.com
+    sudo ln -s /etc/nginx/sites-available/registry.domain.com /etc/nginx/sites-enabled/registry.domain.com
 test nginx configuration
     
     sudo nginx -t
