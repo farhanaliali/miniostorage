@@ -231,5 +231,5 @@ Assuming all of that went fine you now have a working Minio cluster. 4 nodes, 16
 
 access the webui 
 
-    htts://minio.domain.com
+    https://minio.domain.com
 
